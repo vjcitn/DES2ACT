@@ -27,8 +27,8 @@ jobs:
         run: (ls)
       - name: view DESCRIPTION
         run: (cat DESCRIPTION)
-      - name: get dependencies
-        run: (Rscript -e "BiocManager::install(c(basename(getwd())), dependencies=TRUE, update=FALSE)")
+      - name: get dependencies # FAKE -- DES2ACT is a rename of DESeq2 to avoid confusion
+        run: (Rscript -e "BiocManager::install("DESeq2", dependencies=TRUE, update=FALSE)")
       - name: Setup pandoc from r-lib
         uses: r-lib/actions/setup-pandoc@v2
         with:
